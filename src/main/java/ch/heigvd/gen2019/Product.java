@@ -16,26 +16,6 @@ public class Product {
         this.currency = currency;
     }
 
-    public String getCode() {
-        return code;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public Size getSize() {
-        return size;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public String getCurrency() {
-        return currency;
-    }
-
     @Override
     public String toString() {
         StringBuffer sb = new StringBuffer();
@@ -48,7 +28,7 @@ public class Product {
         sb.append(color);
         sb.append("\", ");
 
-        if (getSize() != Size.INVALID_SIZE) {
+        if (size != Size.INVALID_SIZE) {
             sb.append("\"size\": \"");
             sb.append(size);
             sb.append("\", ");
