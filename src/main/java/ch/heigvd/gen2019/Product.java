@@ -60,7 +60,7 @@ public class Product {
         sb.append(", ");
         sb.append("\"currency\": \"");
         sb.append(currency);
-        sb.append("\"}, ");
+        sb.append("\"}");
 
         return sb.toString();
     }

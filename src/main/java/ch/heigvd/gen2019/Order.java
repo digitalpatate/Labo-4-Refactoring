@@ -38,7 +38,7 @@ public class Order {
         sb.append("\"products\": [");
 
         for (int j = 0; j < getProductsCount(); j++) {
-            sb.append(getProduct(j));
+            sb.append(getProduct(j)).append(", ");
         }
 
         if (getProductsCount() > 0) {
@@ -46,7 +46,7 @@ public class Order {
         }
 
         sb.append("]");
-        sb.append("}, ");
+        sb.append("}");
 
         return sb.toString();
     }
