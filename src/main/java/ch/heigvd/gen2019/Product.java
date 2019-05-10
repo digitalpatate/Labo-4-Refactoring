@@ -36,4 +36,32 @@ public class Product {
     public String getCurrency() {
         return currency;
     }
+
+    @Override
+    public String toString() {
+        StringBuffer sb = new StringBuffer();
+
+        sb.append("{");
+        sb.append("\"code\": \"");
+        sb.append(code);
+        sb.append("\", ");
+        sb.append("\"color\": \"");
+        sb.append(color);
+        sb.append("\", ");
+
+        if (getSize() != Size.INVALID_SIZE) {
+            sb.append("\"size\": \"");
+            sb.append(size);
+            sb.append("\", ");
+        }
+
+        sb.append("\"price\": ");
+        sb.append(price);
+        sb.append(", ");
+        sb.append("\"currency\": \"");
+        sb.append(currency);
+        sb.append("\"}, ");
+
+        return sb.toString();
+    }
 }
