@@ -10,23 +10,15 @@ public class Orders {
         orders.add(order);
     }
 
-    public int getOrdersCount() {
-        return orders.size();
-    }
-
-    public Order getOrder(int i) {
-        return orders.get(i);
-    }
-
     @Override
     public String toString() {
         StringBuffer sb = new StringBuffer("{\"orders\": [");
 
-        for (int i = 0; i < getOrdersCount(); i++) {
-            sb.append(getOrder(i)).append(", ");
+        for (Order order : orders) {
+            sb.append(order).append(", ");
         }
 
-        if (getOrdersCount() > 0) {
+        if (!orders.isEmpty()) {
             sb.delete(sb.length() - 2, sb.length());
         }
 
