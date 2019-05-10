@@ -2,7 +2,6 @@ package ch.heigvd.gen2019;
 
 public class Product {
 
-    public static final Size SIZE_NOT_APPLICABLE = Size.INVALID_SIZE;
     private String code;
     private Color color;
     private Size size;
