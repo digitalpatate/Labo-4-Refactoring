@@ -1,14 +1,14 @@
 package ch.heigvd.gen2019;
 
 public class Product {
-    public static final int SIZE_NOT_APPLICABLE = -1;
+
     private String code;
-    private int color;
-    private int size;
+    private Color color;
+    private Size size;
     private double price;
     private String currency;
 
-    public Product(String code, int color, int size, double price, String currency) {
+    public Product(String code, Color color, Size size, double price, String currency) {
         this.code = code;
         this.color = color;
         this.size = size;
@@ -16,23 +16,31 @@ public class Product {
         this.currency = currency;
     }
 
-    public String getCode() {
-        return code;
-    }
+    @Override
+    public String toString() {
+        StringBuffer sb = new StringBuffer();
 
-    public int getColor() {
-        return color;
-    }
+        sb.append("{");
+        sb.append("\"code\": \"");
+        sb.append(code);
+        sb.append("\", ");
+        sb.append("\"color\": \"");
+        sb.append(color);
+        sb.append("\", ");
 
-    public int getSize() {
-        return size;
-    }
+        if (size != Size.INVALID_SIZE) {
+            sb.append("\"size\": \"");
+            sb.append(size);
+            sb.append("\", ");
+        }
 
-    public double getPrice() {
-        return price;
-    }
+        sb.append("\"price\": ");
+        sb.append(price);
+        sb.append(", ");
+        sb.append("\"currency\": \"");
+        sb.append(currency);
+        sb.append("\"}");
 
-    public String getCurrency() {
-        return currency;
+        return sb.toString();
     }
 }

@@ -10,11 +10,18 @@ public class Orders {
         orders.add(order);
     }
 
-    public int getOrdersCount() {
-        return orders.size();
-    }
+    @Override
+    public String toString() {
+        StringBuffer sb = new StringBuffer("{\"orders\": [");
 
-    public Order getOrder(int i) {
-        return orders.get(i);
+        for (Order order : orders) {
+            sb.append(order).append(", ");
+        }
+
+        if (!orders.isEmpty()) {
+            sb.delete(sb.length() - 2, sb.length());
+        }
+
+        return sb.append("]}").toString();
     }
 }
